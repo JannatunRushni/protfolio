@@ -38,30 +38,45 @@
 
         <h1 class="title">Add Product</h1>
 
-        <form action="">
+        @if(session()->has('message'))
+
+        <div class="alert alert-success">
+
+        <button type="button" class="close" data-dismiss="alert">X</button>
+
+
+        {{session()->get('message')}}
+
+        </div>
+
+        @endif
+
+        <form action="{{url('uploadproduct')}}" method="post" enctype="multipart/form-data">
+
+            @csrf
 
         <div style="padding: 15px;">
             <label>Product title</label>
 
-            <input type="text" name="title" placeholder="Give a product title" required="">
+            <input style="color: black;" type="text" name="title" placeholder="Give a product title" required="">
         </div>
 
         <div style="padding: 15px;">
             <label>Price</label>
 
-            <input type="number" name="price" placeholder="Give a price" required="">
+            <input style="color: black;" type="number" name="price" placeholder="Give a price" required="">
         </div>
 
         <div style="padding: 15px;">
             <label>Description</label>
 
-            <input type="text" name="description" placeholder="Give a description" required="">
+            <input style="color: black;" type="text" name="description" placeholder="Give a description" required="">
         </div>
 
         <div style="padding: 15px;">
             <label>Quantity</label>
 
-            <input type="text" name="quantity" placeholder="product quantity" required="">
+            <input style="color: black;" type="text" name="quantity" placeholder="product quantity" required="">
         </div>
 
         <div style="padding: 15px;">
