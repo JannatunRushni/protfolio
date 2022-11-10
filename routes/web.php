@@ -58,3 +58,7 @@ route::get('/delete/{id}',[HomeController::class,'deletechart']);
 
 route::post('/order',[HomeController::class,'confirmorder']);
 
+route::get('/showorder',[AdminController::class,'showorder']);
+
+route::get('/updatestatus/{id}',[AdminController::class,'updatestatus']);
+
